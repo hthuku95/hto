@@ -1,0 +1,31 @@
+{%extends 'base_layout.htm'%}
+{%load static%}
+{% block title %}HtoStudios &mdash; Categories {% endblock %}
+{%block meta%}
+<meta name="description" content="Here are our blogposts organised based on their categories ">
+{%endblock%}
+{%block content%}
+<div id="wrapper">
+    <section id="one" class="wrapper style2 spotlights">
+        {%for article in articles%}
+            <section>
+                <a href="#" class="image"><img src="{{article.thumb.url}}" alt="{{article.title}}" data-position="center center" /></a>
+                <div class="content">
+                    <div class="inner">
+                        <p>{%for item in article.category.all%}
+                            <a href="/articles/category/{{item.name}}/">{{item.name}}</a>,
+                            {%endfor%}
+                        </p>
+                        <h2>{{article.title}}</h2>
+                        <p>{{article.date}}</p>
+                        <p>{{article.snippet}}</p>
+                        <ul class="actions">
+                            <li><a href="/articles/{{article.slug}}" class="button">Read more</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        {%endfor%}
+    </section>
+</div>
+{%endblock%}

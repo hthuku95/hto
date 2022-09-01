@@ -1,0 +1,64 @@
+.register-container{
+    background-color: rgb(126, 86, 163);
+    position: relative;
+    width: 350px;
+    height: 350px;
+    border-radius: 25px;
+    margin: auto;
+    margin-top: 150px;
+    margin-bottom: 350px;
+}
+.register-container > .register-text {
+    position: absolute;
+    margin-top: 25px;
+    left: 30%;
+}
+.register-container > .register-text >span.fas {
+
+    font-size: 150px;
+    color: #fff;
+
+}
+.register-container > .register-text > p {
+    color: #fff;
+    font-size: 125%;
+    margin-bottom: 10px;
+}
+.register-content{
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    margin: auto;
+    top: 60%;
+    text-align: center;
+}
+.register-content > a.facebook{
+    display: block;
+    width: 90%;
+    background-color: rgb(67, 67, 196);
+    border-radius: 10px;
+    text-align: center;
+    margin: auto;
+    margin-top: 5px;
+    height: 50px;
+    padding-top: 5px;
+}
+.register-content > a.google{
+    display: block;
+    width: 90%;
+    background-color: rgb(196, 67, 67);
+    border-radius: 10px;
+    text-align: center;
+    margin: auto;
+    margin-top: 5px;
+    height: 50px;
+    padding-top: 5px;
+}
+.register-content > a.google .fab{
+    font-size: 40px;
+    color: #fff;
+}
+.register-content > a.facebook .fab{
+    font-size: 40px;
+    color: #fff;
+}

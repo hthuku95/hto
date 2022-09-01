@@ -1,0 +1,94 @@
+{%extends 'base_layout.htm'%}
+{%load static%}
+{% block title %} HtoStudios &mdash; {{article.title}} {% endblock %}
+{%block meta%}<meta name="description" content="{{article.intro}}">{%endblock%}
+{%block content%}
+		<!-- Header -->
+        <header id="header">
+            <a href="/" class="title">HtoStudios</a>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/articles" class="active">Articles</a></li>
+                </ul>
+            </nav>
+		</header>
+		<!-- Wrapper -->
+        <div id="wrapper">
+            <!-- Main -->
+            <section id="main" class="wrapper">
+                <div class="inner">
+                    <div class="body-container">
+                        <h1 class="major">{{article.title}}</h1>
+                        <p>
+                            By <strong>{{article.author}}</strong> {{article.date}}
+                        </p>
+
+                        <p>{{article.intro}}</p>
+
+                        <span class="image fit">
+                            <img src="{{article.thumb.url}}" alt="{{article.title}}" class="img-fluid" >
+                        </span>
+                        <p class="thumb-description">
+                            <em>{{article.thumb_description}}</em>
+                        </p>
+
+                        {%for section in sections%}
+                            {% if section.heading %}
+                            <h2>{{section.heading}}</h2>
+                            {% endif %}
+
+                            {% if section.image %}
+                            <span class="image fit"><img src="{{ section.image.url }}" class="img-fluid"></span>
+                            {% endif %}
+
+                            {% if section.text_body %}
+                            <p>{{section.text_body}}</p>
+                            {% endif %}
+
+                            {% if section.quote %}
+                            <blockquote>
+                                {{section.quote}}
+                            </blockquote>
+                            {% endif %}
+
+                            <!-- Video will go here -->
+
+                            {% if section.link %}
+                            <a href="/{{section.link}}/">{{section.link}}</a>
+                            {% endif %}
+
+                            {% if section.code %}
+                            <pre>
+                                <code>
+                                    {{section.code}}
+                                </code>
+                            </pre>
+                            {% endif %}
+
+                        {%endfor%}
+
+                        <p>{{article.outro}}</p>
+                        <!-- Previous and Next buttons -->
+                    </div>
+                </div>
+            </section>
+            <!-- Email list goes here -->
+            <section class="wrapper style2 spotlights">
+                {%for story in stories%}
+                <section>
+                    <a href="#" class="image"><img src="{{story.thumb.url}}" alt="{{story.title}}" data-position="25% 25%" /></a>
+                    <div class="content">
+                        <div class="inner">
+                            <h2>{{story.title}}</h2>
+                            <p>{{story.intro}}</p>
+                            <ul class="actions">
+                                <li><a href="/articles/{{story.slug}}/" class="button">Read</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                {%endfor%}
+            </section>
+        </div>
+{%endblock%}
