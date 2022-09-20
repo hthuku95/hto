@@ -51,6 +51,7 @@ class Section (models.Model):
     text_body = models.TextField(blank=True)
     quote = models.TextField(blank=True,null=True)
     code = models.TextField(blank=True,null=True)
+    code_language = models.CharField(blank=True,null=True, max_length=50)
     image = models.FileField(blank=True,null=True)
     video = models.FileField(blank=True,null=True)
     link = models.CharField(blank=True, null=True, max_length=50)

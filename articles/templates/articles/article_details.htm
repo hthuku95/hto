@@ -60,8 +60,8 @@
 
                             {% if section.code %}
                             <pre>
-                                <code>
-                                    {{section.code}}
+                                <code class="language-{{ section.code_language }}">
+                                    {{ section.code }}
                                 </code>
                             </pre>
                             {% endif %}
