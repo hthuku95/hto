@@ -28,7 +28,7 @@ class Article (models.Model):
 
     views = models.IntegerField(blank=True,default=0,null=True)
 
-    thumb = models.ImageField()
+    thumb = models.FileField(blank=True,null=True)
     thumb_description = models.CharField( max_length=50,null=True) 
 
     categories = models.ManyToManyField(Category, blank=True)
@@ -51,11 +51,10 @@ class Section (models.Model):
     text_body = models.TextField(blank=True)
     quote = models.TextField(blank=True,null=True)
     code = models.TextField(blank=True,null=True)
-    image = models.ImageField(blank=True,null=True)
+    image = models.FileField(blank=True,null=True)
     video = models.FileField(blank=True,null=True)
     link = models.CharField(blank=True, null=True, max_length=50)
 
-    #snippet utils
     def __str__(self):
         return self.name
     
