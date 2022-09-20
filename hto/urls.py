@@ -10,6 +10,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('articles/',include('articles.urls')),
+    path('djrichtextfield/', include('djrichtextfield.urls')),
     path(r'',views.index_view),
 ]
 

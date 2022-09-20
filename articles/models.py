@@ -1,3 +1,4 @@
+from djrichtextfield.models import RichTextField
 from django.db import models
 from django.contrib.auth import get_user_model
 
@@ -55,6 +56,7 @@ class Section (models.Model):
     image = models.FileField(blank=True,null=True)
     video = models.FileField(blank=True,null=True)
     link = models.CharField(blank=True, null=True, max_length=50)
+    text = RichTextField(blank=True,null=True)
 
     def __str__(self):
         return self.name
