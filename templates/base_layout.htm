@@ -12,9 +12,8 @@
 
         <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
         <link rel="stylesheet" href="{% static 'assets/style/style.css' %}" />
-        <link rel="stylesheet" href="{% static 'assets/style/about_style.css' %}" />
-        <link rel="stylesheet" href="{% static 'assets/style/article_list.css' %}" />
-        <link rel="stylesheet" href="{% static 'assets/style/article_detail.css' %}" />
+        {% block extra_head %}
+        {% endblock extra_head %}
         <link rel="stylesheet" href="{% static 'highlightjs/styles/atom-one-dark.min.css' %}" />
         <noscript><link rel="stylesheet" href="{% static 'assets/css/noscript.css' %}" /></noscript>
 	</head>

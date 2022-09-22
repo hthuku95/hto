@@ -8,28 +8,21 @@
     color: #fff;
 
 }
-.comment-box >ul{
-    border: solid 2px rgb(126, 86, 163);
-    border-radius: 25px;
-    padding-left: 0;
-}
-.comment-box >ul > li{
+
+pre {
     display: block;
-    border-bottom: solid 1px rgb(126, 86, 163);
-
-}
-.comment-box >ul > li {
-    border-radius: 25px;
-}
-pre{
-    /**background-color:#1b1b47;**/
+    width: 100%;
+    overflow: auto;
     border-radius: 5px;
-    
-    width:100%;
-    overflow:auto;    
-
+    word-wrap: normal;
     font-size: 0.9em;
     color: #fff;
+
+}
+
+pre > code {
+    display: block;
+    white-space: inherit;
 }
 
 @media screen and (min-width:1200px){
@@ -39,8 +32,6 @@ pre{
     }
     .article-image{
         height: 500px;
-    }
-    .comment-box{
     }
 }
 @media screen and (min-width:900px) and (max-width:1200px){
