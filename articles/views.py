@@ -21,6 +21,7 @@ def article_details(request,slug):
     article = Article.objects.get(slug=slug)
     stories = Article.objects.all().order_by('date')[:4]
     sections = Section.objects.filter(root_article=article)
+    author = article.get_author()
 
     # updating the number of views
     article.views = article.views + 1
@@ -30,5 +31,6 @@ def article_details(request,slug):
         'article':article,
         'stories':stories,
         'sections':sections,
+        'author':author,
         })
 

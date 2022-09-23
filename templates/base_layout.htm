@@ -39,5 +39,8 @@
         <script src=" {% static 'assets/js/main.js' %}"></script>
         <script src=" {% static 'highlightjs/highlight.min.js' %} "></script>
         <script>hljs.highlightAll();</script>
+
+        {% block extra_scripts %}
+        {% endblock extra_scripts %}
 	</body>
 </html>

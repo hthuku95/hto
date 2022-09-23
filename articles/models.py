@@ -37,12 +37,14 @@ class Article (models.Model):
     intro = models.TextField( max_length=256, blank=True, null=True)
     outro = models.TextField( max_length=256, blank=True, null=True)
 
-    # snippet utils
     def __str__(self):
         return self.title
     
     def snippet(self):
         return self.intro 
+
+    def get_author(self):
+        return self.author
 
 # sections model
 class Section (models.Model):

@@ -4,6 +4,7 @@
 {%block meta%}<meta name="description" content="{{article.intro}}">{%endblock%}
 {% block extra_head %}
 <link rel="stylesheet" href="{% static 'assets/style/article_detail.css' %}" />
+<script src="https://kit.fontawesome.com/76e4c8eff3.js" crossorigin="anonymous"></script>
 {% endblock extra_head %}
 {%block content%}
 		<!-- Header -->
@@ -24,7 +25,7 @@
                     <div class="body-container">
                         <h1 class="major">{{article.title}}</h1>
                         <p>
-                            By <strong>{{article.author}}</strong> {{article.date}}
+                            <strong><a href="" class="icon-links"> <i class="fa-brands fa-twitter fa-xl"></i> </a></strong> <strong> <a href="" class="icon-links"> <i class="fa-brands fa-linkedin fa-xl"></i>  </a></strong> <strong> {{article.author}}</strong> {{article.date}}
                         </p>
 
                         <p>{{article.intro}}</p>
@@ -95,3 +96,6 @@
             </section>
         </div>
 {%endblock%}
+
+{% block extra_scripts %}
+{% endblock extra_scripts %}
