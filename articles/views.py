@@ -1,7 +1,8 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import get_user
-from .models import Contact ,Article, Category, Section
+from .models import Article, Category, Section
+from contacts.models import Contact
 
 # Create your views here.
 

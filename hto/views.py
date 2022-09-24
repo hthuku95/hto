@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from .forms import ContactForm
-from articles.models import Contact,Article,Author,Category
+from articles.models import Article,Author,Category
+from contacts.models import Contact
 
 # index page view
 def index_view(request):
