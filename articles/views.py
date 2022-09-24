@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import get_user
 from .models import Article, Category, Section
 from contacts.models import Contact
+from contacts.forms import NewsletterForm
 
 # Create your views here.
 
@@ -28,10 +29,14 @@ def article_details(request,slug):
     article.views = article.views + 1
     article.save()
 
-    return render(request,'articles/article_details.htm',{
+    form = NewsletterForm()
+
+    context = {
         'article':article,
         'stories':stories,
         'sections':sections,
         'author':author,
-        })
+        'form':form
+        }
+    return render(request,'articles/article_details.htm',context)
 
