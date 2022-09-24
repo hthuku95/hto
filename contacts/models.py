@@ -10,3 +10,10 @@ class Contact (models.Model):
     #snippet utils
     def __str__(self):
         return self.name
+
+class Email(models.Model):
+    email = models.EmailField(blank=True,null=True, max_length=254)
+
+    def __str__(self):
+        return self.email
+    
