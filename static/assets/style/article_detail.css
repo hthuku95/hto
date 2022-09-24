@@ -9,6 +9,11 @@
 
 }
 
+a.icon-links {
+    display: block;
+    text-decoration: none;
+}
+
 pre {
     display: block;
     width: 100%;

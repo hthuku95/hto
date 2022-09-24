@@ -25,7 +25,7 @@
                     <div class="body-container">
                         <h1 class="major">{{article.title}}</h1>
                         <p>
-                            <strong><a href="" class="icon-links"> <i class="fa-brands fa-twitter fa-xl"></i> </a></strong> <strong> <a href="" class="icon-links"> <i class="fa-brands fa-linkedin fa-xl"></i>  </a></strong> <strong> {{article.author}}</strong> {{article.date}}
+                            <strong><a href="{{author.twitter}}" class="icon brands"> <i class="fa-brands fa-twitter fa-xl"></i> </a></strong> <strong> <a href="{{author.linkedin}}" class="icon brands"> <i class="fa-brands fa-linkedin fa-xl"></i>  </a></strong> <strong> {{author.name}}</strong> {{article.date}}
                         </p>
 
                         <p>{{article.intro}}</p>
@@ -78,6 +78,18 @@
                 </div>
             </section>
             <!-- Email list goes here -->
+            <section class="wrapper style1 spotlights">
+                <section>
+                    <div class="content">
+                        <div class="inner">
+                            <h1>Subscribe to our newsletter</h1>
+                            <ul class="actions">
+                                <li><a href="/articles/" class="button">Subscribe</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </section>
             <section class="wrapper style2 spotlights">
                 {%for story in stories%}
                 <section>
