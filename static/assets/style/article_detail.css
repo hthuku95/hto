@@ -30,6 +30,12 @@ pre > code {
     white-space: inherit;
 }
 
+.form-container {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 @media screen and (min-width:1200px){
     .body-container{
         width:70%;
