@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import get_user
 from .models import Article, Category, Section
-from contacts.models import Contact
+from contacts.models import Contact,Email
 from contacts.forms import NewsletterForm
 
 # Create your views here.
@@ -29,8 +29,11 @@ def article_details(request,slug):
     article.views = article.views + 1
     article.save()
 
-    form = NewsletterForm()
-
+    if request.method == 'POST':
+        form = NewsletterForm(request.POST)
+    else:
+        form = NewsletterForm()
+    
     context = {
         'article':article,
         'stories':stories,
@@ -38,5 +41,6 @@ def article_details(request,slug):
         'author':author,
         'form':form
         }
+
     return render(request,'articles/article_details.htm',context)
 

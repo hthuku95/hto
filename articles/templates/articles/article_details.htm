@@ -83,9 +83,19 @@
                     <div class="content">
                         <div class="inner">
                             <h1>Subscribe to our newsletter</h1>
-                            <ul class="actions">
-                                <li><a href="/articles/" class="button">Subscribe</a></li>
-                            </ul>
+                            <form method="post" action="/articles/{{article.slug}}/">
+                                {% csrf_token %}
+                                <div class="row gtr-uniform">
+                                    <div class="col-6 col-12-xsmall">
+                                        <input type="email" name="email" id="email" value="" placeholder="Enter your email">
+                                    </div>
+                                    <div class="col-6 col-12-xsmall">
+                                        <ul class="actions">
+                                            <li><input type="submit" value="Subscribe"></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </section>
