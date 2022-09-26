@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import get_user
 from .models import Article, Category, Section
+from django.contrib import messages
 from contacts.models import Contact,Email
 from contacts.forms import NewsletterForm
 
@@ -31,6 +32,14 @@ def article_details(request,slug):
 
     if request.method == 'POST':
         form = NewsletterForm(request.POST)
+
+        if form.is_valid():
+            email_address = form.cleaned_data['email']
+
+            new_email = Email(email=email_address)
+            new_email.save()
+            messages.success(request, "Email address added successfully")
+            return redirect("articles:article_details")
     else:
         form = NewsletterForm()
     
