@@ -83,6 +83,7 @@
                     <div class="content">
                         <div class="inner">
                             <h1>Subscribe to our newsletter</h1>
+                            <p>Subbscribe to our news letter for our weekly news report and to get notified when we upload new articles and tutorials.</p>
                             <form method="post" action="/articles/{{article.slug}}/">
                                 {% csrf_token %}
                                 <div class="row gtr-uniform">
@@ -103,13 +104,13 @@
             <section class="wrapper style2 spotlights">
                 {%for story in stories%}
                 <section>
-                    <a href="#" class="image"><img src="{{story.thumb.url}}" alt="{{story.title}}" data-position="25% 25%" /></a>
+                    <a href="{{article.get_absolute_url}}" class="image"><img src="{{story.thumb.url}}" alt="{{story.title}}" data-position="25% 25%" /></a>
                     <div class="content">
                         <div class="inner">
                             <h2>{{story.title}}</h2>
                             <p>{{story.intro}}</p>
                             <ul class="actions">
-                                <li><a href="/articles/{{story.slug}}/" class="button">Read</a></li>
+                                <li><a href="{{article.get_absolute_url}}" class="button">Read</a></li>
                             </ul>
                         </div>
                     </div>
