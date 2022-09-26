@@ -39,7 +39,7 @@ def article_details(request,slug):
             new_email = Email(email=email_address)
             new_email.save()
             messages.success(request, "Email address added successfully")
-            return redirect("articles:article_details")
+            return redirect("articles:article_details",slug=article.slug)
     else:
         form = NewsletterForm()
     
