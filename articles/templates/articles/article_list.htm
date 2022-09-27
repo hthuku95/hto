@@ -6,6 +6,18 @@
 <link rel="stylesheet" href="{% static 'assets/style/article_list.css' %}" />
 {% endblock extra_head %}
 {%block content%}
+    <!-- Header -->
+    <header id="header">
+        <a href="/" class="title">HtoStudios</a>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/articles" class="active">Articles</a></li>
+                <li><a href="#">Tutorials</a></li>
+                <li><a href="#">News</a></li>
+            </ul>
+        </nav>
+    </header>
     <section id="one" class="wrapper style2 spotlights">
         {%for article in articles%}
             <section>
