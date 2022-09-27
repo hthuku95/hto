@@ -31,7 +31,7 @@ class Article (models.Model):
     thumb = models.FileField(blank=True,null=True)
     thumb_description = models.CharField( max_length=50,null=True) 
 
-    categories = models.ManyToManyField(Category, blank=True)
+    categories = models.ForeignKey(Category, blank=True,null=True, on_delete=models.SET_NULL)
 
     intro = models.TextField( max_length=256, blank=True, null=True)
     outro = models.TextField( max_length=256, blank=True, null=True)

@@ -7,7 +7,7 @@ from contacts.models import Contact
 def index_view(request):
 
     # db queries
-    articles = Article.objects.all().order_by('-date')[:3]
+    articles = Article.objects.all().order_by('-date')
 
     # contact form validation
     if request.method == 'POST':
