@@ -10,9 +10,7 @@ from contacts.forms import NewsletterForm
 
 # article category page
 def article_category(request, slug):
-    articles = Article.objects.filter(category__name = slug)
-    categories = Category.objects.all()
-    return render(request,'articles/article_category.htm',{'articles':articles,'categories':categories})
+    pass
 
 # article list page
 def article_list(request):
