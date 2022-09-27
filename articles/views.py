@@ -18,7 +18,7 @@ def article_category(request, slug):
         'categories':categories
     }
 
-    return render(request,'articles/article_category.htm',context)
+    return render(request,'articles/article_category.html',context)
 
     
 
@@ -32,7 +32,7 @@ def article_list(request):
         'categories':categories
     }
 
-    return render(request,'articles/article_list.htm',context)
+    return render(request,'articles/article_list.html',context)
 
 # article details
 def article_details(request,slug):
@@ -68,5 +68,5 @@ def article_details(request,slug):
         'categories':categories
         }
 
-    return render(request,'articles/article_details.htm',context)
+    return render(request,'articles/article_details.html',context)
 

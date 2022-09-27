@@ -28,5 +28,5 @@ def index_view(request):
         form = ContactForm()
 
     # rendering view,
-    return render(request,'index.htm',{'form':form,'articles':articles})
+    return render(request,'index.html',{'form':form,'articles':articles})
 
