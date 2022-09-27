@@ -11,9 +11,11 @@ from contacts.forms import NewsletterForm
 # article category page
 def article_category(request, slug):
     articles = Article.objects.filter(category__name = slug).order_by('-date')
+    categories = Category.objects.all()
 
     context = {
-        'articles':articles
+        'articles':articles,
+        'categories':categories
     }
 
     return render(request,'articles/article_category.htm',context)
@@ -23,9 +25,11 @@ def article_category(request, slug):
 # article list page
 def article_list(request):
     articles = Article.objects.all().order_by('-date')
+    categories = Category.objects.all()
 
     context = {
-        'articles':articles
+        'articles':articles,
+        'categories':categories
     }
 
     return render(request,'articles/article_list.htm',context)
@@ -36,6 +40,7 @@ def article_details(request,slug):
     stories = Article.objects.all().order_by('date')[:4]
     sections = Section.objects.filter(root_article=article)
     author = article.get_author()
+    categories = Category.objects.all()
 
     # updating the number of views
     article.views = article.views + 1
@@ -59,7 +64,8 @@ def article_details(request,slug):
         'stories':stories,
         'sections':sections,
         'author':author,
-        'form':form
+        'form':form,
+        'categories':categories
         }
 
     return render(request,'articles/article_details.htm',context)
