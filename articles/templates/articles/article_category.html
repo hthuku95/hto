@@ -6,12 +6,20 @@
 <link rel="stylesheet" href="{% static 'assets/style/article_list.css' %}" />
 {% endblock extra_head %}
 {%block content%}
+    <!-- Header -->
+    <header id="header">
+        <a href="/" class="title">HtoStudios</a>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/articles" class="active">Articles</a></li>
+                {% for category in categories %}
+                <li><a href="#">{{category.name}}</a></li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </header>
     <section id="one" class="wrapper style2 spotlights">
-        <section id="intro" class="wrapper style1 fullscreen fade-up">
-            <div class="inner">
-                <h2>Articles</h2>
-            </div>
-        </section>
         {%for article in articles%}
             <section>
                 <a href="{{article.get_absolute_url}}" class="image"><img src="{{article.thumb.url}}" alt="{{article.title}}" data-position="center center" /></a>
