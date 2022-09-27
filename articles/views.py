@@ -10,12 +10,25 @@ from contacts.forms import NewsletterForm
 
 # article category page
 def article_category(request, slug):
-    pass
+    articles = Article.objects.filter(category__name = slug).order_by('-date')
+
+    context = {
+        'articles':articles
+    }
+
+    return render(request,'articles/article_category.htm',context)
+
+    
 
 # article list page
 def article_list(request):
     articles = Article.objects.all().order_by('-date')
-    return render(request,'articles/article_list.htm',{'articles':articles})
+
+    context = {
+        'articles':articles
+    }
+
+    return render(request,'articles/article_list.htm',context)
 
 # article details
 def article_details(request,slug):
