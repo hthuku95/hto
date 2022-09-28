@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     # Locals
     'articles',
     'contacts',
+    'profiles',
 
     # allauth
     'allauth',
