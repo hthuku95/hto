@@ -107,13 +107,13 @@
             <section class="wrapper style2 spotlights">
                 {%for story in stories%}
                 <section>
-                    <a href="{{article.get_absolute_url}}" class="image"><img src="{{story.thumb.url}}" alt="{{story.title}}" data-position="25% 25%" /></a>
+                    <a href="{{story.get_absolute_url}}" class="image"><img src="{{story.thumb.url}}" alt="{{story.title}}" data-position="25% 25%" /></a>
                     <div class="content">
                         <div class="inner">
                             <h2>{{story.title}}</h2>
                             <p>{{story.intro}}</p>
                             <ul class="actions">
-                                <li><a href="{{article.get_absolute_url}}" class="button">Read</a></li>
+                                <li><a href="{{story.get_absolute_url}}" class="button">Read</a></li>
                             </ul>
                         </div>
                     </div>
