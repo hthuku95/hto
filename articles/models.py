@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
-
+from django.shortcuts import reverse
 # Create your models here.
 # category model
 class Category (models.Model):
@@ -9,6 +9,11 @@ class Category (models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return reverse("articles:article_category",kwargs={
+            'slug':self.name
+        })
+        
 # author model
 class Author (models.Model):
     name = models.CharField( max_length=50)
@@ -18,6 +23,8 @@ class Author (models.Model):
     # snippet utils
     def __str__(self):
         return self.name
+
+
 
 # article model
 class Article (models.Model):
@@ -45,6 +52,11 @@ class Article (models.Model):
     def get_author(self):
         return self.author
 
+    def get_absolute_url(self):
+        return reverse("articles:article_details", kwargs={
+            'slug': self.slug
+        })
+
 # sections model
 class Section (models.Model):
     root_article = models.ForeignKey(Article,on_delete=models.CASCADE,null=True)
@@ -61,8 +73,5 @@ class Section (models.Model):
     def __str__(self):
         return self.name
 
-    def get_absolute_url(self):
-        return reverse("articles:article_details", kwargs={
-        'slug': self.slug
-    })
+
     
