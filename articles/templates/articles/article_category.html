@@ -12,7 +12,7 @@
         <nav>
             <ul>
                 <li><a href="/">Home</a></li>
-                <li><a href="/articles" class="active">Articles</a></li>
+                <li><a href="{% url 'articles:article_lists' %}" class="active">Articles</a></li>
                 {% for category in categories %}
                 <li><a href="{{category.get_absolute_url}}" class="active">{{category.name}}</a></li>
                 {% endfor %}
