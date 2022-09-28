@@ -11,7 +11,7 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('articles/',include('articles.urls')),
     path('djrichtextfield/', include('djrichtextfield.urls')),
-    path(r'',views.index_view),
+    path(r'',views.index_view, name='index'),
 ]
 
 # appending the static files urls to the above media
