@@ -26,7 +26,12 @@ def index_view(request):
             return redirect('/')
     else:
         form = ContactForm()
+    
+    context = {
+        'articles':articles,
+        'form':form,
+    }
 
     # rendering view,
-    return render(request,'index.html',{'form':form,'articles':articles})
+    return render(request,'index.html',context)
 
