@@ -20,10 +20,16 @@ class Author (models.Model):
     twitter = models.CharField( max_length=100,blank=True,null=True)
     linkedin = models.CharField(max_length=100,blank=True,null=True)
 
-    # snippet utils
     def __str__(self):
         return self.name
 
+class Tag(models.Model):
+    name = models.CharField( max_length=50)
+
+    def __str__(self):
+        return self.name
+    
+    
 
 
 # article model
@@ -37,6 +43,8 @@ class Article (models.Model):
 
     thumb = models.FileField(blank=True,null=True)
     thumb_description = models.CharField( max_length=50,null=True) 
+
+    tags = models.ManyToManyField(Tag, blank=True)
 
     category = models.ForeignKey(Category, blank=True,null=True, on_delete=models.SET_NULL)
 
