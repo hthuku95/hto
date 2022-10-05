@@ -20,8 +20,6 @@ def article_category(request, slug):
 
     return render(request,'articles/article_category.html',context)
 
-    
-
 # article list page
 def article_list(request):
     articles = Article.objects.all().order_by('-date')
