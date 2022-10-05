@@ -58,6 +58,7 @@ def article_details(request,slug):
             email_address_qs = Email.objects.filter(email=email_address)
             if email_address_qs.exists():
                 messages.info(request, "You are already subscribed")
+                return redirect("articles:article_details",slug=article.slug)
             else:
                 new_email = Email(user=user,email=email_address)
                 new_email.save()
