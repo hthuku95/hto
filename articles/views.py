@@ -5,7 +5,7 @@ from .models import Article, Category, Section
 from django.contrib import messages
 from contacts.models import Contact,Email
 from contacts.forms import NewsletterForm
-
+from profiles.models import UserProfile
 # Create your views here.
 
 # article category page
@@ -42,6 +42,9 @@ def article_details(request,slug):
     author = article.get_author()
     categories = Category.objects.all()
 
+    user_profile = request.user
+    user = UserProfile.objects.get(user=user_profile)
+
     # updating the number of views
     article.views = article.views + 1
     article.save()
@@ -52,7 +55,7 @@ def article_details(request,slug):
         if form.is_valid():
             email_address = form.cleaned_data['email']
 
-            new_email = Email(email=email_address)
+            new_email = Email(user=user,email=email_address)
             new_email.save()
             messages.success(request, "Email address added successfully")
             return redirect("articles:article_details",slug=article.slug)
