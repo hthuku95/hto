@@ -35,7 +35,7 @@ def article_list(request):
 # article details
 def article_details(request,slug):
     article = Article.objects.get(slug=slug)
-    stories = Article.objects.all().order_by('date')[:4]
+    stories = Article.objects.filter(category=article.category).order_by('date')[:4]
     sections = Section.objects.filter(root_article=article)
     author = article.get_author()
     categories = Category.objects.all()
