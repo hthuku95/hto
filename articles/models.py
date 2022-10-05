@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from django.shortcuts import reverse
+from profiles.models import UserProfile
 # Create your models here.
 # category model
 class Category (models.Model):
@@ -16,6 +17,7 @@ class Category (models.Model):
         
 # author model
 class Author (models.Model):
+    user = models.ForeignKey(UserProfile, blank=True,null=True, on_delete=models.CASCADE)
     name = models.CharField( max_length=50)
     twitter = models.CharField( max_length=100,blank=True,null=True)
     linkedin = models.CharField(max_length=100,blank=True,null=True)

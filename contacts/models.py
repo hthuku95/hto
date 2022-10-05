@@ -1,4 +1,5 @@
 from django.db import models
+from profiles.models import UserProfile
 
 # Create your models here.
 
@@ -19,6 +20,7 @@ class Contact (models.Model):
         return self.name
 
 class Email(models.Model):
+    user = models.ForeignKey(UserProfile, blank=True, null=True, on_delete=models.CASCADE)
     email = models.EmailField(blank=True,null=True, max_length=254)
     news_plan = models.CharField(blank=True,null=True,choices=NEWS_PLAN_CHOICES,default='D', max_length=2)
  
