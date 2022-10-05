@@ -55,10 +55,14 @@ def article_details(request,slug):
         if form.is_valid():
             email_address = form.cleaned_data['email']
 
-            new_email = Email(user=user,email=email_address)
-            new_email.save()
-            messages.success(request, "Email address added successfully")
-            return redirect("articles:article_details",slug=article.slug)
+            email_address_qs = Email.objects.filter(email=email_address)
+            if email_address_qs.exists():
+                messages.info(request, "You are already subscribed")
+            else:
+                new_email = Email(user=user,email=email_address)
+                new_email.save()
+                messages.success(request, "Email address added successfully")
+                return redirect("articles:article_details",slug=article.slug)
     else:
         form = NewsletterForm()
     
