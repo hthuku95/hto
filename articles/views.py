@@ -40,9 +40,6 @@ def article_details(request,slug):
     author = article.get_author()
     categories = Category.objects.all()
 
-    user_profile = request.user
-    user = UserProfile.objects.get(user=user_profile)
-
     # updating the number of views
     article.views = article.views + 1
     article.save()
