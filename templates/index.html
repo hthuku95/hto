@@ -40,7 +40,7 @@
         <section id="one" class="wrapper style2 spotlights">
             {% for article in articles %}
             <section>
-                <a href="{{article.get_absolute_url}}" class="image"><img src="{{ article.thumb.url }}" alt="{{article.title}}" data-position="center center" width=400px,height=400px/></a>
+                <a href="{{article.get_absolute_url}}" class="image" style="background-position: 25% 25%;"><img src="{{ article.thumb.url }}" alt="{{article.title}}" data-position="25% 25%"/></a>
                 <div class="content">
                     <div class="inner">
                         <h2>{{article.title}}</h2>
