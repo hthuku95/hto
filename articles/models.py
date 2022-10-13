@@ -57,7 +57,7 @@ class Article (models.Model):
         return self.title
     
     def snippet(self):
-        return self.intro 
+        return self.intro
 
     def get_author(self):
         return self.author
