@@ -13,7 +13,7 @@
             <nav>
                 <ul>
                     <li><a href="{% url 'index' %}" class="active">Home</a></li>
-                    <li><a href="{% url 'articles:article_lists' %}">Articles</a></li>
+                    <li><a href="{% url 'articles:article_lists' %}">Stories</a></li>
                     {% for category in categories %}
                     <li><a href="{{category.get_absolute_url}}">{{category.name}}</a></li>
                     {% endfor %}
@@ -83,9 +83,8 @@
             <!-- Email list goes here -->
             <section class="wrapper style1 spotlights form-container">
                 <section>
-                    <div class="content">
+                    <div class="content m-auto">
                         <div class="inner">
-                            <div class="co-12-lg m-auto">
                             <h1>Subscribe to our newsletter</h1>
                             <p>Subbscribe to our news letter for our weekly news report and to get notified when we upload new articles and tutorials.</p>
                             <form method="post" action="/articles/{{article.slug}}/">
@@ -101,7 +100,6 @@
                                     </div>
                                 </div>
                             </form>
-                        </div>
                         </div>
                     </div>
                 </section>
