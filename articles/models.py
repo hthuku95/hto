@@ -70,6 +70,8 @@ class Article (models.Model):
 # sections model
 class Section (models.Model):
     root_article = models.ForeignKey(Article,on_delete=models.CASCADE,null=True)
+    # For the smooth scrolling Table of contents Sidebar
+    element_id = models.CharField(max_length=50, blank=True,null=True)
     name = models.CharField( max_length=50, blank=True, null=True)
     heading = models.CharField(blank=True,null=True, max_length=50)
     text_body = models.TextField(blank=True)
