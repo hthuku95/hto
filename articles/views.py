@@ -71,5 +71,5 @@ def article_details(request,slug):
         'categories':categories
         }
 
-    return render(request,'articles/article_details3.html',context)
+    return render(request,'articles/article_details.html',context)
 
