@@ -137,9 +137,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR,'static_in_env'),
-)
+STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'static_in_env'), ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
@@ -148,4 +146,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SITE_ID = 1
 LOGIN_REDIRECT_URL = "/"
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
