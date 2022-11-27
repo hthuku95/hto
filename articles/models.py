@@ -21,6 +21,7 @@ class Author (models.Model):
     name = models.CharField( max_length=50)
     twitter = models.CharField( max_length=100,blank=True,null=True)
     linkedin = models.CharField(max_length=100,blank=True,null=True)
+    twitter_handle = models.CharField(max_length=50,default="Username should start with @")
 
     def __str__(self):
         return self.name
@@ -46,24 +47,25 @@ class Article (models.Model):
     thumb = models.FileField(blank=True,null=True)
     thumb_description = models.CharField( max_length=50,null=True) 
 
+    # Populate the DB with many tags and rotate them 
     tags = models.ManyToManyField(Tag, blank=True)
 
     category = models.ForeignKey(Category, blank=True,null=True, on_delete=models.SET_NULL)
-
+    summary = models.TextField(max_length=256, default="Article summary")
     intro = models.TextField( max_length=256, blank=True, null=True)
     outro = models.TextField( max_length=256, blank=True, null=True)
 
     def __str__(self):
         return self.title
-    
-    def snippet(self):
-        return self.intro
 
     def get_author(self):
         return self.author
 
     def get_absolute_url(self):
         return reverse("articles:article_details", kwargs={
+            'year':self.date.year,
+            'month':self.date.month,
+            'day':self.date.day,
             'slug': self.slug
         })
 
