@@ -33,7 +33,7 @@ def article_list(request):
     return render(request,'articles/article_list.html',context)
 
 # article details
-def article_details(request,slug):
+def article_details(request,slug, *args, **kwargs):
     article = Article.objects.get(slug=slug)
     stories = Article.objects.filter(category=article.category).order_by('date')[:4]
     sections = Section.objects.filter(root_article=article)
