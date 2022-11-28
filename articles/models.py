@@ -69,6 +69,9 @@ class Article (models.Model):
             'slug': self.slug
         })
 
+class ListItem(models.Model):
+    item = models.CharField(max_length=256,blank=True,null=True)
+
 # sections model
 class Section (models.Model):
     root_article = models.ForeignKey(Article,on_delete=models.CASCADE,null=True)
@@ -83,9 +86,12 @@ class Section (models.Model):
     image = models.FileField(blank=True,null=True)
     video = models.FileField(blank=True,null=True)
     link = models.CharField(blank=True, null=True, max_length=50)
+    list_items = models.ManyToManyField(ListItem, blank=True)
 
     def __str__(self):
         return self.name
+
+
 
 
     
