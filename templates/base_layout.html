@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="{% static 'assets/style/style.css' %}" />
         {% block extra_head %}
         {% endblock extra_head %}
-        <link rel="stylesheet" href="{% static 'highlightjs/styles/atom-one-dark.min.css' %}" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
         <noscript><link rel="stylesheet" href="{% static 'assets/css/noscript.css' %}" /></noscript>
 	</head>
 	<body class="is-preload">
@@ -59,7 +59,7 @@
         <script src=" {% static 'assets/js/breakpoints.min.js' %}"></script>
         <script src=" {% static 'assets/js/util.js' %}"></script>
         <script src=" {% static 'assets/js/main.js' %}"></script>
-        <script src=" {% static 'highlightjs/highlight.min.js' %} "></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
         <script>hljs.highlightAll();</script>
 
         {% block extra_scripts %}
