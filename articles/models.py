@@ -31,9 +31,6 @@ class Tag(models.Model):
 
     def __str__(self):
         return self.name
-    
-    
-
 
 # article model
 class Article (models.Model):
