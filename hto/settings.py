@@ -20,7 +20,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [env('PRODUCTION_IP'),'127.0.0.1','localhost']
+ALLOWED_HOSTS = ['www.htostudios.com','htostudios.com',env('PRODUCTION_IP'),'127.0.0.1','localhost']
 
 
 # Application definition
