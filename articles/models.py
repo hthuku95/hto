@@ -48,9 +48,9 @@ class Article (models.Model):
     tags = models.ManyToManyField(Tag, blank=True)
 
     category = models.ForeignKey(Category, blank=True,null=True, on_delete=models.SET_NULL)
-    summary = models.TextField(max_length=256, default="Article summary")
-    intro = models.TextField( max_length=256, blank=True, null=True)
-    outro = models.TextField( max_length=256, blank=True, null=True)
+    summary = models.TextField(max_length=512, default="Article summary")
+    intro = models.TextField( max_length=512, blank=True, null=True)
+    outro = models.TextField( max_length=512, blank=True, null=True)
 
     def __str__(self):
         return self.title
