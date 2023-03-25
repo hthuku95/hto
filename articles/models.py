@@ -68,7 +68,7 @@ class Article (models.Model):
 
 # sections model
 class Section (models.Model):
-    root_article = models.ForeignKey(Article,on_delete=models.CASCADE,null=True)
+    root_article = models.ForeignKey(Article,on_delete=models.CASCADE)
     heading = models.CharField(blank=True,null=True, max_length=512)
     text_body = models.TextField(blank=True)
     quote = models.TextField(blank=True,null=True)
