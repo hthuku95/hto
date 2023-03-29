@@ -25,10 +25,10 @@
 {% block extra_head %}
 <link rel="stylesheet" href="{% static 'assets/style/article_detail.css' %}" />
 <script src="https://kit.fontawesome.com/76e4c8eff3.js" crossorigin="anonymous"></script>
-
+<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5d51d5053387b20012d77a33&product=inline-share-buttons' async='async'></script>
 
 {% endblock extra_head %}
-<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5d51d5053387b20012d77a33&product=inline-share-buttons' async='async'></script>
+
 {%block content%}
 		<!-- Header -->
         <header id="header">
@@ -57,7 +57,9 @@
                                 </p>
 
                                 <p>{{article.intro}}</p>
-
+                                <!--
+                                <div class="sharethis-inline-share-buttons"></div> 
+                            -->
                                 <span class="image fit">
                                     <img src="{{article.thumb.url}}" alt="{{article.title}}" class="img-fluid thumb" >
                                 </span>
