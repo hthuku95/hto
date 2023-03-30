@@ -7,7 +7,11 @@
 {% block meta %}
 <!--Create a new DB field for this-->
 <meta name="description" content="{{article.intro}}">
-<meta name="keywords" content="">
+
+<meta name="keywords" content="
+    {% for tag in article.get_tags %}
+    {{tag}},
+    {% endfor %}">
 <meta name="author" content="{{article.author.name}}">
 
 <meta property="og:url" content="{{article.get_absolute_url}}" />
