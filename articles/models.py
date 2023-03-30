@@ -55,6 +55,12 @@ class Article (models.Model):
     def __str__(self):
         return self.title
 
+    def get_tags(self):
+        items = []
+        for tag in self.tags:
+            items.append(tag)
+        return items
+
     def get_author(self):
         return self.author
 
