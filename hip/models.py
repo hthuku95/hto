@@ -29,15 +29,14 @@ class ImprovementProposal(models.Model):
     def __str__(self): 
         return self.title
     
-
-
 class ArticleIdea(models.Model ):
     title = models.CharField(max_length=256)
-
-class SubTitle(models.Model):
-    article_idea = models.ForeignKey(ArticleIdea, on_delete=models.CASCADE)
-    title = models.CharField(max_length=256)
+    description = TextField(blank=True,null=True)
 
     def __str__(self):
         return self.title
+
+
+
+
 
