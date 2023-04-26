@@ -61,6 +61,9 @@ class Article (models.Model):
             items.append(tag)
         return items
 
+    def snippet(self):
+        return self.intro[:128] + "..."
+
     def get_author(self):
         return self.author
 
