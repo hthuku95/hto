@@ -35,14 +35,15 @@ def article_list(request):
 # article details
 def article_details(request,slug, *args, **kwargs):
     article = Article.objects.get(slug=slug)
-    stories = Article.objects.filter(category=article.category).order_by('date')[:4]
-    sections = Section.objects.filter(root_article=article)
+    stories = Article.objects.filter(category=article.category).exclude(slug=slug).order_by('date')[:4]
+    sections = Section.objects.filter(root_article=article).order_by('section_number')
     author = article.get_author()
     categories = Category.objects.all()
 
     # updating the number of views
     article.views = article.views + 1
     article.save()
+
 
     if request.method == 'POST':
         form = NewsletterForm(request.POST)
