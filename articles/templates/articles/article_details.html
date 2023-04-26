@@ -6,12 +6,8 @@
 
 {% block meta %}
 <!--Create a new DB field for this-->
-<meta name="description" content="{{article.intro}}">
+<meta name="description" content="{{article.summary}}">
 
-<meta name="keywords" content="
-    {% for tag in article.get_tags %}
-    {{tag}},
-    {% endfor %}">
 <meta name="author" content="{{article.author.name}}">
 
 <meta property="og:url" content="{{article.get_absolute_url}}" />
@@ -143,7 +139,7 @@
                         <div class="inner">
                             <h2>{{story.title}}</h2>
                             <p>{{story.date}}</p>
-                            <p>{{story.intro}}</p>
+                            <p>{{story.snippet}}</p>
                             <ul class="actions">
                                 <li><a href="{{story.get_absolute_url}}" class="button">Read</a></li>
                             </ul>
