@@ -1,0 +1,118 @@
+{%extends 'base_layout.html'%}
+{% load static %}
+{% block title %}HtoStudios &mdash; Blockchain Developement Academy{% endblock %}
+{%block meta%}
+<meta name="description" content="HtoStudios is a Web3 Learning platform with an aim of making blockchain development education free and accesible to everyone.">
+<meta name="keywords" content="Blockchain Development, Web3, Solidity, Ethereum, Smart Contracts, Blockchain, Technology, Programming">
+{% endblock %}
+{%block content%}
+<section id="sidebar">
+    <div class="inner">
+        <nav>
+            <ul>
+                <li><a href="#intro">Welcome</a></li>
+                <li><a href="#one">Articles</a></li>
+                <li><a href="#two">About</a></li>
+                <li><a href="#three">Get in touch</a></li>
+            </ul>
+        </nav>
+    </div>
+</section>
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Intro -->
+        <section id="intro" class="wrapper style1 fullscreen fade-up">
+            <div class="inner">
+                <h1>HtoStudios</h1>
+                <h2>Blockchain Developement Academy</h2>
+                <p>
+                    Building a community of learners and innovators in Web3
+                </p>
+                <ul class="actions">
+                    <li><a href="#two" class="button scrolly">Learn More</a></li>
+                </ul>
+            </div>
+        </section>
+
+    <!-- One -->
+        <section id="one" class="wrapper style2 spotlights">
+            {% for article in articles %}
+            <section>
+                <a href="{{article.get_absolute_url}}" class="image" style="background-position: 25% 25%;"><img src="{{ article.thumb.url }}" alt="{{article.title}}" data-position="25% 25%"/></a>
+                <div class="content">
+                    <div class="inner">
+                        <h2>{{article.title}}</h2>
+                        <p>{{article.date}}</p>
+                        <p>{{article.snippet}}</p>
+                        <ul class="actions">
+                            <li><a href="{{article.get_absolute_url}}" class="button">Read more</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            {%endfor%}
+        </section>
+
+    <!-- Two -->
+        <section id="two" class="wrapper style3 fade-up">
+            <div class="inner">
+                <h2>About Us</h2>
+                <p>
+                    HtoStudios is a dedicated Blockchain Development learning platform, aimed at providing in-depth education and empowering individuals to become experts in the field. We offer comprehensive and accessible resources to help you learn the fundamentals of Solidity, Python, JavaScript and other crucial computer science and programming concepts that are integral to the blockchain space. Our goal is to equip you with the tools and knowledge necessary for building robust, full-stack decentralized applications. With our support, you can confidently navigate the rapidly growing world of Blockchain Development and contribute to its growth and innovation.
+                </p>
+            </div>
+        </section>
+
+    <!-- Three -->
+        <section id="three" class="wrapper style1 fade-up">
+            <div class="inner">
+                <h2>Get in touch</h2>
+                <p> Say hi, share your thoughts and business enquireries.</p>
+                <div class="split style1">
+                    <section>
+                        <form method="post" action="/">
+                            {% csrf_token %}
+                            <div class="fields">
+                                {%for field in form%}
+                                <div class="field half">
+                                    <label for="{{field.name}}">{{field.name}}</label>
+                                    {{field}}
+                                </div>
+                                {%endfor%}
+                            </div>
+                            <ul class="actions">
+                                <li><a href="/" class="button submit">Send Message</a></li>
+                            </ul>
+                        </form>
+                    </section>
+                    <section>
+                        <ul class="contact">
+                            <li>
+                                <h3>HtoStudios</h3>
+                            </li>
+                            <li>
+                                <h3>Email</h3>
+                                <a href="#">info@htostudios.com</a>
+                            </li>
+                            <li>
+                                <h3>Nairobi KENYA</h3>
+                            </li>
+                            <li>
+                                <h3>Social</h3>
+                                <ul class="icons">
+                                    <li><a href="https://www.twitter.com/htostudioss" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                                    <li><a href="https://www.facebook.com/htostudios" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                                    <li><a href="https://www.instagram.com/htostudios" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                                    <li><a href="https://www.linkedin.com/company/htostudios" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+                                    <li><a href="https://www.pinterest.com/htostudios" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </section>
+</div>
+{%endblock%}
