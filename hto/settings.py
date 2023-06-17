@@ -100,7 +100,7 @@ else:
             'NAME': env('DATABASE_NAME'),
             'USER': env('DATABASE_USER'),
             'PASSWORD': env('DATABASE_PASSWORD'),
-            'HOST': env('DB_HOST'),
+            'HOST': 'database-1.csgxl86ajxru.us-west-2.rds.amazonaws.com',
             'PORT': env('DB_PORT'),
         }
     }
